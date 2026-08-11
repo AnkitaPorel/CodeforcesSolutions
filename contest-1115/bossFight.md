@@ -1,8 +1,8 @@
 # Boss Fight
 
-- **Time complexity:** O(n) per test case (O(Σn) overall) — one pass to sum damages and count frequencies, then one pass over the frequency map (at most n distinct values)
+- **Time complexity:** O(n) per test case (O(Σn) overall) - one pass to sum damages and count frequencies, then one pass over the frequency map (at most n distinct values)
 - **Memory limit:** 256 megabytes
-- **Space complexity:** O(n) — the input array and the frequency map (at most n distinct values)
+- **Space complexity:** O(n) - the input array and the frequency map (at most n distinct values)
 
 ## Problem Statement
 
@@ -18,12 +18,12 @@ Each test contains multiple test cases.
 
 - The first line contains the number of test cases `t` (`1 <= t <= 100`).
 - The description of each test case follows:
-  - The first line contains a single integer `n` (`1 <= n <= 50`) — the number of spell cards.
-  - The second line contains `n` integers `a1, a2, ..., an` (`1 <= ai <= 1000`) — the damage dealt by each card.
+  - The first line contains a single integer `n` (`1 <= n <= 50`) - the number of spell cards.
+  - The second line contains `n` integers `a1, a2, ..., an` (`1 <= ai <= 1000`) - the damage dealt by each card.
 
 ## Output
 
-For each test case, output a single integer — the maximum total health the boss can have such that you will defeat him.
+For each test case, output a single integer - the maximum total health the boss can have such that you will defeat him.
 
 ## Solution
 
@@ -38,8 +38,8 @@ The answer is the maximum total damage that can be dealt. If the cards can be or
 
 ### Variables
 
-- `ans` — baseline total damage, i.e., the sum of all `a[i]`
-- `mp` — frequency map: each distinct damage value mapped to how many cards deal it
-- `fmax` — the highest frequency among all damage values
-- `mx` — the damage value that occurs `fmax` times (the majority value)
-- `res` — the number of majority-value cards that must be played after the shield activates and therefore deal `0` damage; computed as `max(0, fmax - (n - fmax) - 2)` and multiplied by `mx` to get the damage lost
+- `ans` - baseline total damage, i.e., the sum of all `a[i]`
+- `mp` - frequency map: each distinct damage value mapped to how many cards deal it
+- `fmax` - the highest frequency among all damage values
+- `mx` - the damage value that occurs `fmax` times (the majority value)
+- `res` - the number of majority-value cards that must be played after the shield activates and therefore deal `0` damage; computed as `max(0, fmax - (n - fmax) - 2)` and multiplied by `mx` to get the damage lost

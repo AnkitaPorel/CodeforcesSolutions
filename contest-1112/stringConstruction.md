@@ -1,8 +1,8 @@
 # String Construction
 
-- **Time complexity:** O(n) per test case (O(Σn) overall) — the answer string of length `n` is built with a few linear loops
+- **Time complexity:** O(n) per test case (O(Σn) overall) - the answer string of length `n` is built with a few linear loops
 - **Memory limit:** 256 megabytes
-- **Space complexity:** O(n) — the constructed output string
+- **Space complexity:** O(n) - the constructed output string
 
 ## Problem Statement
 
@@ -26,7 +26,7 @@ It is guaranteed that the sum of `n` over all test cases does not exceed `2 * 10
 
 ## Output
 
-For each test case, output a binary string `s` of length `n` — the string you constructed. Print `-1` if such a string does not exist.
+For each test case, output a binary string `s` of length `n` - the string you constructed. Print `-1` if such a string does not exist.
 
 If there are multiple answers, any of them may be output.
 
@@ -39,13 +39,13 @@ For the counts of `0` and `1` to differ by at most `1`, the string must use roug
 1. If `k > n - 2`, print `-1`.
 2. Otherwise, set `diff = n - k - 2`, the number of equal pairs that must be "removed" from the maximum `n - 2`.
 3. Start with an alternating prefix of length `diff` (starting with `0`). An alternating block contributes no equal pairs.
-4. Append the remaining characters as two equal-character blocks — all zeros then all ones, or the reverse depending on the prefix length's parity. This keeps the junction between blocks non-equal.
+4. Append the remaining characters as two equal-character blocks - all zeros then all ones, or the reverse depending on the prefix length's parity. This keeps the junction between blocks non-equal.
 5. Total equal pairs become `(zeroCount - 1) + (oneCount - 1) = n - 2 - diff = k`, and the character counts stay balanced.
 
 ### Variables
 
-- `n`, `k` — the length of the string and the required number of adjacent equal pairs
-- `diff` — `n - k - 2`, the length of the alternating prefix; it determines how many equal pairs are dropped from the maximum `n - 2`
-- `oneCount` — `n / 2`, the number of `1`s in the string
-- `zeroCount` — `n - oneCount`, the number of `0`s in the string (ensures `|zeroCount - oneCount| <= 1`)
-- `ans` — the constructed binary string; the alternating prefix is built first, then the leftover zeros and ones are appended as two blocks (zeros first when `diff` is even, ones first when `diff` is odd, so the boundary never creates an extra equal pair)
+- `n`, `k` - the length of the string and the required number of adjacent equal pairs
+- `diff` - `n - k - 2`, the length of the alternating prefix; it determines how many equal pairs are dropped from the maximum `n - 2`
+- `oneCount` - `n / 2`, the number of `1`s in the string
+- `zeroCount` - `n - oneCount`, the number of `0`s in the string (ensures `|zeroCount - oneCount| <= 1`)
+- `ans` - the constructed binary string; the alternating prefix is built first, then the leftover zeros and ones are appended as two blocks (zeros first when `diff` is even, ones first when `diff` is odd, so the boundary never creates an extra equal pair)

@@ -1,8 +1,8 @@
 # Threshold Movement
 
-- **Time complexity:** O(n) per test case (O(Σn) overall) — one pass to read the array and one pass to compute the min/max on the two parity groups
+- **Time complexity:** O(n) per test case (O(Σn) overall) - one pass to read the array and one pass to compute the min/max on the two parity groups
 - **Memory limit:** 256 megabytes
-- **Space complexity:** O(n) — the input array of weights
+- **Space complexity:** O(n) - the input array of weights
 
 ## Problem Statement
 
@@ -39,14 +39,14 @@ Position `1` can only receive an element from position `2`, so the element at po
 
 ### How it works
 
-1. If `n` is odd, the movement constraints at the two ends contradict each other, so no perfect `k` exists — print `NO`.
+1. If `n` is odd, the movement constraints at the two ends contradict each other, so no perfect `k` exists - print `NO`.
 2. Otherwise, all even-position weights must satisfy `w < k` and all odd-position weights must satisfy `w > k`, and `k` must not equal any weight.
 3. This means an integer `k` must fit strictly between the largest even-position weight and the smallest odd-position weight: `max(w_even) < k < min(w_odd)`.
 4. Such an integer exists exactly when `min(w_odd) - max(w_even) >= 2`.
 
 ### Variables
 
-- `a` — the array of weights, indexed from `0` (0-based index `i` corresponds to position `i + 1`)
-- `mini` — the minimum weight among 0-based even indices (positions `1, 3, 5, ...`), which must be strictly greater than `k`
-- `maxi` — the maximum weight among 0-based odd indices (positions `2, 4, 6, ...`), which must be strictly less than `k`
+- `a` - the array of weights, indexed from `0` (0-based index `i` corresponds to position `i + 1`)
+- `mini` - the minimum weight among 0-based even indices (positions `1, 3, 5, ...`), which must be strictly greater than `k`
+- `maxi` - the maximum weight among 0-based odd indices (positions `2, 4, 6, ...`), which must be strictly less than `k`
 - Final condition: `YES` if `n` is even and `mini - maxi >= 2`, otherwise `NO`
