@@ -6,7 +6,7 @@
 
 ## Problem Statement
 
-The integers from 1 to n are distributed between two players, represented by a binary string `s` of length n: `si = 1` if integer `i` belongs to Souvlakity, `si = 0` if it belongs to Kalamakity (there is at least one `1`).
+The integers from 1 to n are distributed between two players, represented by a binary string `s` of length n: $s_{i} = 1$ if integer `i` belongs to Souvlakity, $s_{i} = 0$ if it belongs to Kalamakity (there is at least one `1`).
 
 The game lasts 10^100 turns, with Souvlakity playing first and the players alternating. On each turn, a player must give exactly one of their integers to the other player. After all turns, Souvlakity's score is the range of the integers he owns: `max(S) - min(S)`, where `S` is his final set (he is guaranteed to own at least one integer). Souvlakity wants to maximize this score, Kalamakity wants to minimize it. What is the final score under optimal play?
 
